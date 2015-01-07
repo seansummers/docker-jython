@@ -1,7 +1,7 @@
 FROM seansummers/alpine-java:jre7
 MAINTAINER seansummers@gmail.com
 RUN [ "/sbin/apk.static", "add", "bash" ]
-ENV JYTHON_VERSION 2.5.3
+ENV JYTHON_VERSION 2.5.4-rc1
 RUN apk.static add axel \
  && axel -o jython-installer-${JYTHON_VERSION}.jar \
      "http://search.maven.org/remotecontent?filepath=org/python/jython-installer/${JYTHON_VERSION}/jython-installer-${JYTHON_VERSION}.jar" \
