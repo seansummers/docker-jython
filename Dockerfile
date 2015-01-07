@@ -3,7 +3,7 @@ MAINTAINER seansummers@gmail.com
 RUN [ "/sbin/apk.static", "add", "bash" ]
 ENV JYTHON_VERSION 2.7-b3
 RUN apk.static add axel \
- && axel -o jython-installer-${JYTHON_VERSION}.jar \
+ && axel -q -o jython-installer-${JYTHON_VERSION}.jar \
      "http://search.maven.org/remotecontent?filepath=org/python/jython-installer/${JYTHON_VERSION}/jython-installer-${JYTHON_VERSION}.jar" \
  && apk.static del axel \
  && java -jar jython-installer-${JYTHON_VERSION}.jar -s -t standard -d /usr/local/jython-${JYTHON_VERSION} \
